@@ -308,9 +308,9 @@ class Scrambler
         if (isset($target_directory))                                   // the constructor will restore previous saved context if exists
         {
             $this->context_directory = $target_directory;
-            if (file_exists("{$this->context_directory}/../fescate/context/{$this->scramble_type}"))
+            if (file_exists("{$this->context_directory}/pemoon/fescate/context/{$this->scramble_type}"))
             {
-                $t = unserialize(file_get_contents("{$this->context_directory}/../fescate/context/{$this->scramble_type}"));
+                $t = unserialize(file_get_contents("{$this->context_directory}/pemoon/fescate/context/{$this->scramble_type}"));
                 if ($t[0] !== self::SCRAMBLER_CONTEXT_VERSION)
                 {
                     fprintf(STDERR,"Error:\tContext format has changed! run with --clean option!".PHP_EOL);
@@ -337,7 +337,7 @@ class Scrambler
             $t[2]   = $this->t_rscramble;
             $t[3]   = $this->scramble_length;
             $t[4]   = $this->label_counter;
-            file_put_contents("{$this->context_directory}/../fescate/context/{$this->scramble_type}",serialize($t));
+            file_put_contents("{$this->context_directory}/pemoon/fescate/context/{$this->scramble_type}",serialize($t));
         }
     }
 
