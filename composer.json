@@ -1,0 +1,10 @@
+{
+  "name": "pemoon/fescate",
+  "license": "MIT",
+  "type": "project",
+  "description": "PHP Fescate",
+  "require": {
+    "php": "^7.0 || ^8.0",
+    "ext-json": "*"
+  }
+}
