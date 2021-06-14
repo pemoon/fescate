@@ -19,9 +19,9 @@ require_once 'include/classes/parser_extensions/my_autoloader.php';
 require_once 'include/classes/parser_extensions/my_pretty_printer.php';
 require_once 'include/classes/parser_extensions/my_node_visitor.php';
 
-if ($clean_mode && file_exists("$target_directory/../fescate/.fescate-directory")) {
-	if (!$conf->silent) fprintf(STDERR, "Info:\tRemoving directory\t= [%s]%s", "$target_directory/../fescate", PHP_EOL);
-	remove_directory("$target_directory/../fescate");
+if ($clean_mode && file_exists("$target_directory/pemoon/fescate/.fescate-directory")) {
+	if (!$conf->silent) fprintf(STDERR, "Info:\tRemoving directory\t= [%s]%s", "$target_directory/pemoon/fescate", PHP_EOL);
+	remove_directory("$target_directory/pemoon/fescate");
 	exit(31);
 }
 

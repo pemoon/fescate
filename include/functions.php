@@ -142,7 +142,7 @@ function check_config_file($filename)                       // self-explanatory
 
 function create_context_directories($target_directory)      // self-explanatory
 {
-    foreach( array("$target_directory/../fescate","$target_directory/../fescate/context") as $dummy => $dir)
+    foreach( array("$target_directory/pemoon/fescate","$target_directory/pemoon/fescate/context") as $dummy => $dir)
     {
         if (!file_exists($dir)) mkdir($dir,0777,true);
         if (!file_exists($dir))
@@ -152,7 +152,7 @@ function create_context_directories($target_directory)      // self-explanatory
         }
     }
     $target_directory = realpath($target_directory);
-    if (!file_exists("$target_directory/../fescate/.fescate-directory")) touch("$target_directory/../fescate/.fescate-directory");
+    if (!file_exists("$target_directory/pemoon/fescate/.fescate-directory")) touch("$target_directory/pemoon/fescate/.fescate-directory");
 }
 
 
