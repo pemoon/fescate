@@ -3,24 +3,37 @@
 // Do not delete the previous line! it's a magic string for config file!
 // when we use the word ignore, that means that it is ignored during the obfuscation process (i.e. not obfuscated)
 
-$conf->t_ignore_pre_defined_classes     = 'all';        // 'all' (default value) , 'none',  or array of pre-defined classes that you use in your software:
-                                                        //      ex: array('Exception', 'PDO', 'PDOStatement', 'PDOException');
-                                                        // As instantiation is done at runtime, it is impossible to statically determinate when a method call is detected, on which class the object belong.
-                                                        // so, all method names that exists in a pre_defined_class to ignore are ignored within every classes.
-                                                        // if you have some method names in your classes that have the same name that a predefine class method, it will not be obfuscated.
-                                                        // you can limit the number of method names to ignore by providing an array of the pre-defined classes you really use in your software!
-                                                        // same behaviour for properties...
-
-$conf->t_ignore_constants               = null;         // array where values are names to ignore.
-$conf->t_ignore_variables               = null;         // array where values are names to ignore.
-$conf->t_ignore_functions               = null;         // array where values are names to ignore.
-$conf->t_ignore_class_constants         = null;         // array where values are names to ignore.
-$conf->t_ignore_methods                 = null;         // array where values are names to ignore.
-$conf->t_ignore_properties              = null;         // array where values are names to ignore.
-$conf->t_ignore_classes                 = null;         // array where values are names to ignore.
-$conf->t_ignore_interfaces              = null;         // array where values are names to ignore.
-$conf->t_ignore_traits                  = null;         // array where values are names to ignore.
-$conf->t_ignore_namespaces              = null;         // array where values are names to ignore.
+t_ignore_pre_defined_classes     = 'all';        // 'all' (default value) , 'none',  or array of pre-defined classes that you use in your software:
+$conf->t_ignore_constants               = true;         // array where values are names to ignore.
+$conf->t_ignore_variables               = [
+	'sitepress',
+	'wp_rewrite',
+	'wp_scripts',
+	'wp_styles',
+	'wp_styles',
+	'polylang',
+	'q_config',
+	'wpml_url_filters',
+	'is_nginx',
+	'is_apache',
+	'pagenow',
+	'blog_id',
+	'wpdb',
+	'wp',
+	'wp_query',
+	'post',
+	'typenow',
+	'current_screen',
+	'_wp_additional_image_sizes',
+	];         // array where values are names to ignore.
+$conf->t_ignore_functions               = true;         // array where values are names to ignore.
+$conf->t_ignore_class_constants         = true;         // array where values are names to ignore.
+$conf->t_ignore_methods                 = true;         // array where values are names to ignore.
+$conf->t_ignore_properties              = true;         // array where values are names to ignore.
+$conf->t_ignore_classes                 = true;         // array where values are names to ignore.
+$conf->t_ignore_interfaces              = true;         // array where values are names to ignore.
+$conf->t_ignore_traits                  = true;         // array where values are names to ignore.
+$conf->t_ignore_namespaces              = true;         // array where values are names to ignore.
 $conf->t_ignore_labels                  = null;         // array where values are names to ignore.
 
 $conf->t_ignore_constants_prefix        = null;         // array where values are prefix of names to ignore.
@@ -45,16 +58,16 @@ $conf->scramble_length                  = 5;            // min length of scrambl
 
 $conf->t_obfuscate_php_extension        = array('php'); // array where values are extensions of php files to be obfuscated.
 
-$conf->obfuscate_constant_name          = true;         // self explanatory
+$conf->obfuscate_constant_name          = false;         // self explanatory
 $conf->obfuscate_variable_name          = true;         // self explanatory
-$conf->obfuscate_function_name          = true;         // self explanatory
-$conf->obfuscate_class_name             = true;         // self explanatory
-$conf->obfuscate_interface_name         = true;         // self explanatory
-$conf->obfuscate_trait_name             = true;         // self explanatory
-$conf->obfuscate_class_constant_name    = true;         // self explanatory
-$conf->obfuscate_property_name          = true;         // self explanatory
-$conf->obfuscate_method_name            = true;         // self explanatory
-$conf->obfuscate_namespace_name         = true;         // self explanatory
+$conf->obfuscate_function_name          = false;         // self explanatory
+$conf->obfuscate_class_name             = false;         // self explanatory
+$conf->obfuscate_interface_name         = false;         // self explanatory
+$conf->obfuscate_trait_name             = false;         // self explanatory
+$conf->obfuscate_class_constant_name    = false;         // self explanatory
+$conf->obfuscate_property_name          = false;         // self explanatory
+$conf->obfuscate_method_name            = false;         // self explanatory
+$conf->obfuscate_namespace_name         = false;         // self explanatory
 $conf->obfuscate_label_name             = true;         // label: , goto label;  obfuscation
 $conf->obfuscate_if_statement           = true;         // obfuscation of  if else elseif statements
 $conf->obfuscate_loop_statement         = true;         // obfuscation of  for while do while statements
@@ -87,5 +100,3 @@ $conf->user_comment                     = null;         // user comment to inser
 
 $conf->extract_comment_from_line        = null;         // when both 2 are set, each obfuscated file will contain an extract of the corresponding source file,
 $conf->extract_comment_to_line          = null;         // starting from extract_comment_from_line number, and ending at extract_comment_to_line line number.
-
-?>
