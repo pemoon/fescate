@@ -50,7 +50,7 @@ $conf->t_ignore_traits_prefix           = null;         // array where values ar
 $conf->t_ignore_namespaces_prefix       = null;         // array where values are prefix of names to ignore.
 $conf->t_ignore_labels_prefix           = null;         // array where values are prefix of names to ignore.
 
-$conf->parser_mode                      = 'PREFER_PHP5';// allowed modes are 'PREFER_PHP7', 'PREFER_PHP5', 'ONLY_PHP7', 'ONLY_PHP5'
+$conf->parser_mode                      = 'PREFER_PHP7';// allowed modes are 'PREFER_PHP7', 'PREFER_PHP5', 'ONLY_PHP7', 'ONLY_PHP5'
                                                         // see PHP-Parser documentation for meaning...
 
 $conf->scramble_mode                    = 'identifier'; // allowed modes are 'identifier', 'hexa', 'numeric'
@@ -73,7 +73,7 @@ $conf->obfuscate_if_statement           = true;         // obfuscation of  if el
 $conf->obfuscate_loop_statement         = true;         // obfuscation of  for while do while statements
 $conf->obfuscate_string_literal         = true;         // pseudo-obfuscation of  string literals
 
-$conf->shuffle_stmts                    = true;         // shuffle chunks of statements!  disable this obfuscation (or minimize the number of chunks) if performance is important for you!
+$conf->shuffle_stmts                    = false;         // shuffle chunks of statements!  disable this obfuscation (or minimize the number of chunks) if performance is important for you!
 $conf->shuffle_stmts_min_chunk_size     =    1;         // minimum number of statements in a chunk! the min value is 1, that gives you the maximum of obfuscation ... and the minimum of performance...
 $conf->shuffle_stmts_chunk_mode         = 'fixed';      // 'fixed' or 'ratio' in fixed mode, the chunk_size is always equal to the min chunk size!
 $conf->shuffle_stmts_chunk_ratio        =   20;         // ratio > 1  100/ratio is the percentage of chunks in a statements sequence  ratio = 2 means 50%  ratio = 100 mins 1% ...
